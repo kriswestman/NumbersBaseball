@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Batting {
     int number;
-    int a = 0;
     Random pitch = new Random();
 
     public String normalPitch() {
