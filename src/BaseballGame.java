@@ -16,9 +16,9 @@ public class BaseballGame {
             swing = console.nextInt();
         }
         while (!bat.strike().equals("Out!") || !bat.normalPitch().equals("Single!") || !bat.normalPitch().equals("Double!")
-                || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.normalPitch().equals("Walk!")) {
+            || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.normalPitch().equals("Walk!")) {
             bat.normalPitch();
-
+            //test
         }
     }
 }
