@@ -1,6 +1,3 @@
-/**
- * Created by ros_kjwestman on 5/12/2017.
- */
 import java.util.*;
 
 public class Batting {
@@ -10,36 +7,48 @@ public class Batting {
     public String normalPitch() {
         String[] result = new String[25];
         for (int i = 0; i <= 24; i++) {
-            result[i] = "strike";
-            for (int j = 1; j <= 4; j++) {
-                result[pitch.nextInt(25) + 1] = "hit";
-            }
-            for (int k = 5; k <= 14; k++) {
-                result[pitch.nextInt(25) + 1] = "ball";
-            }
-            if (result[number].equals("hit")) {
-                return hit();
-            } else if (result[number].equals("ball")) {
-                return "ball";
-            } else  {
-                return "strike";
-            }
+            result[i] = "Strike!";
         }
-        return "";
+        for (int i = 1; i <= 4; i++) {
+            result[randomPitch()] = "Hit!";
+        }
+        for (int i = 5; i <= 14; i++) {
+            result[randomPitch()] = "Ball!";
+        }
+        if(result[number] == "Hit!") {
+            return hit();
+        } else if (result[number] == "Ball!") {
+            return "Ball!";
+        } else {
+            return "Strike!";
+        }
+    }
+
+    public int randomPitch() {
+        return pitch.nextInt(25) + 1;
     }
 
     public String hit() {
         int randomHit = pitch.nextInt(10) + 1;
-        if(randomHit <= 4) {
-            return "single";
-        } else if(randomHit <= 7) {
-            return "dub";
-        } else if(randomHit == 8) {
-            return "triple";
+        if (randomHit <= 4) {
+            return "Single!";
+        } else if (randomHit < 8) {
+            return "Double!";
+        } else if (randomHit == 8) {
+            return "Triple!";
         } else {
-            return "homeRun";
+            return "Home Run!";
         }
     }
 
-
+    public String strike() {
+        int strike = 0;
+        if (normalPitch().equals("Strike!")) {
+            strike++;
+            if (strike == 3) {
+                return "Out!";
+            }
+        }
+        return "";
+    }
 }
