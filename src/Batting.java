@@ -12,7 +12,7 @@ public class Batting {
         for (int i = 1; i <= 4; i++) {
             result[randomPitch()] = "Hit!";
         }
-        for (int i = 5; i <= 14; i++) {
+        for (int i = 1; i <= 10; i++) {
             result[randomPitch()] = "Ball!";
         }
         if(result[number] == "Hit!") {
@@ -47,6 +47,17 @@ public class Batting {
             strike++;
             if (strike == 3) {
                 return "Out!";
+            }
+        }
+        return "";
+    }
+
+    public String walk() {
+        int walk = 0;
+        if (normalPitch().equals("Ball!")) {
+            walk++;
+            if (walk == 3) {
+                return "Walk!";
             }
         }
         return "";
