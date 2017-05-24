@@ -9,23 +9,36 @@ public class Batting {
     }
 
     public String normalPitch() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("The computer will now pitch.\nInput a number (1-25) to bat! ");
+        number = input.nextInt();
+        if (number > 25 || number < 1) {
+            while (number > 25 || number < 1) {
+                System.out.print("Input out of bounds. Try again! ");
+                number = input.nextInt();
+            }
+        } else {
+            number = input.nextInt();
+        }
         String[] result = new String[25];
         for (int i = 0; i <= 24; i++) {
             result[i] = "Strike!";
         }
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= 8; i++) {
             result[randomPitch()] = "Hit!";
         }
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 8; i++) {
             result[randomPitch()] = "Ball!";
         }
         if (result[number].equals("Hit!")) {
             return hit();
         } else if (result[number].equals("Ball!")) {
+            walk();
             System.out.println("Ball!");
             return "Ball!";
         } else {
             System.out.println("Strike!");
+            strike();
             return "Strike!";
         }
     }
@@ -79,8 +92,9 @@ public class Batting {
 
     public String foul() {
         int foul = 0;
-        foul++;
         if (foul <= 2) {
+            foul++;
+            System.out.println("Foul! Strike " + foul + "!");
             return "Foul! Strike " + foul + "!";
         } else {
             System.out.println("Foul!");

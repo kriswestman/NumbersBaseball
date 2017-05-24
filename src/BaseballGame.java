@@ -7,13 +7,6 @@ public class BaseballGame {
         int swing = 0;
         System.out.print("Welcome to Probability Baseball!\nTo play, enter numbers into the console.\nCan you beat the computer?\n\n");
         Batting bat = new Batting(swing);
-        System.out.print("The computer will now pitch.\nInput a number (1-25) to bat! ");
-        if (swing <= 25) {
-            swing = console.nextInt();
-        } while (swing > 25) {
-            System.out.print("Input out of bounds. Try again! ");
-            swing = console.nextInt();
-        }
         bat.normalPitch();
         while (!bat.strike().equals("Out!") || !bat.normalPitch().equals("Single!") || !bat.normalPitch().equals("Double!")
         || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.walk().equals("Walk!")) {
