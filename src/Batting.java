@@ -12,33 +12,21 @@ public class Batting {
         Scanner input = new Scanner(System.in);
         System.out.print("The computer will now pitch.\nInput a number (1-25) to bat! ");
         number = input.nextInt();
-        if (number > 25 || number < 1) {
-            while (number > 25 || number < 1) {
-                System.out.print("Input out of bounds. Try again! ");
-                number = input.nextInt();
-            }
-        } else {
+        while (number > 25 || number < 1) {
+            System.out.print("Input out of bounds. Try again! ");
             number = input.nextInt();
         }
-        String[] result = new String[25];
-        for (int i = 0; i <= 24; i++) {
-            result[i] = "Strike!";
-        }
-        for (int i = 1; i <= 8; i++) {
-            result[randomPitch()] = "Hit!";
-        }
-        for (int i = 1; i <= 8; i++) {
-            result[randomPitch()] = "Ball!";
-        }
-        if (result[number].equals("Hit!")) {
+        randomPitch();
+        if (randomPitch() > 0 && randomPitch() < 9) {
             return hit();
-        } else if (result[number].equals("Ball!")) {
+        }
+        else if (randomPitch() > 8 && randomPitch() < 17) {
             walk();
             System.out.println("Ball!");
             return "Ball!";
         } else {
-            System.out.println("Strike!");
             strike();
+            System.out.println("Strike!");
             return "Strike!";
         }
     }
