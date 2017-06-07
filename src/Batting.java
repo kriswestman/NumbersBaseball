@@ -26,6 +26,7 @@ public class Batting {
         else if (pitch > 8 && pitch < 16) {
             System.out.println("Ball!");
             ball++;
+            System.out.println("Ball count is " + ball + ".");
             if (ball == 4) {
                 ball = 0;
                 return "Walk!";
@@ -34,10 +35,11 @@ public class Batting {
         } else {
             System.out.println("Strike!");
             strike++;
+            System.out.println("Strike count is " + strike + ".");
             if (strike == 3) {
+                strike = 0;
                 return "Out";
             } else {
-                strike = 0;
                 return "Strike!";
             }
         }
@@ -61,12 +63,13 @@ public class Batting {
             System.out.println("Home Run!");
             return "Home Run!";
         } else {
-            System.out.println("Foul!");
             foul++;
-            if (foul > 3) {
+            if (foul < 3) {
                 strike++;
+                System.out.println("Foul! Strike!" + strike + "!");
                 return "Foul! Strike!";
             } else {
+                System.out.println("Foul!");
                 return "Foul!";
             }
         }
