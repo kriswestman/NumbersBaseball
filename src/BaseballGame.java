@@ -9,7 +9,7 @@ public class BaseballGame {
         Batting bat = new Batting(swing);
         bat.normalPitch();
         while (!bat.normalPitch().equals("Out!") || !bat.normalPitch().equals("Single!") || !bat.normalPitch().equals("Double!")
-        || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.walk().equals("Walk!")) {
+            || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.normalPitch().equals("Walk!")) {
             bat.normalPitch();
 
         }

@@ -5,6 +5,7 @@ public class Batting {
     Random pitch = new Random();
     int strike;
     int foul;
+    int ball;
 
     public Batting(int swing) {
         this.number = swing;
@@ -18,38 +19,28 @@ public class Batting {
             System.out.print("Input out of bounds. Try again! ");
             number = input.nextInt();
         }
-        randomPitch();
-        if (randomPitch() > 0 && randomPitch() < 9) {
-
+        int pitch = randomPitch();
+        if (pitch > 0 && pitch < 9) {
+            return hit();
         }
-//        String[] result = new String[26];
-//        for (int i = 0; i <= 25; i++) {
-//            result[i] = "Strike!";
-//        }
-//        for (int i = 1; i <= 8; i++) {
-//            result[randomPitch()] = "Hit!";
-//        }
-//        for (int i = 1; i <= 8; i++) {
-//            result[randomPitch()] = "Ball!";
-//        }
-//
-//
-//        if (result[number].equals("Hit!")) {
-//            return hit();
-//        } else if (result[number].equals("Ball!")) {
-//            walk();
-//            System.out.println("Ball!");
-//            return "Ball!";
-//        } else {
-//            System.out.println("Strike!");
-//            strike++;
-//            if (strike == 3) {
-//                return "Out";
-//            } else {
-//                return "Strike!";
-//            }
-//        }
-//    }
+        else if (pitch > 8 && pitch < 16) {
+            System.out.println("Ball!");
+            ball++;
+            if (ball == 4) {
+                ball = 0;
+                return "Walk!";
+            }
+            return "Ball!";
+        } else {
+            System.out.println("Strike!");
+            strike++;
+            if (strike == 3) {
+                return "Out";
+            } else {
+                strike = 0;
+                return "Strike!";
+            }
+        }
     }
     public int randomPitch() {
         return pitch.nextInt(24) + 1;
@@ -74,26 +65,10 @@ public class Batting {
             foul++;
             if (foul > 3) {
                 strike++;
-                if (strike == 3) {
-                    return "Out";
-                } else {
-                    return "Foul! Strike!";
-                }
+                return "Foul! Strike!";
             } else {
                 return "Foul!";
-                }
-        }
-    }
-
-    public String walk() {
-        int walk = 0;
-        if (normalPitch().equals("Ball!")) {
-            walk++;
-            if (walk == 3) {
-                System.out.println("Walk!");
-                return "Walk!";
             }
         }
-        return "";
     }
 }
