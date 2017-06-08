@@ -51,7 +51,7 @@ public class Batting {
     }
 
     public String hit() {
-        int randomHit = pitch.nextInt(12) + 1;
+        int randomHit = pitch.nextInt(16) + 1;
         if (randomHit <= 4) {
             System.out.println("Single!");
             return "Single!";
@@ -61,15 +61,21 @@ public class Batting {
         } else if (randomHit == 8) {
             System.out.println("Triple!");
             return "Triple!";
-        } else if (randomHit > 8 && randomHit < 11){
+        } else if (randomHit > 8 && randomHit < 11) {
             System.out.println("Home Run!");
             return "Home Run!";
+        } else if (randomHit >= 11 && randomHit <= 12) {
+            System.out.println("Flyout!");
+            return "Flyout!";
+        } else if (randomHit >= 13 && randomHit <= 14) {
+            System.out.println("Groundout!");
+            return "Groundout!";
         } else {
             foul++;
-            if (foul < 3) {
+            if (strike < 2) {
                 strike++;
-                System.out.println("Foul! Strike!" + strike + "!");
-                return "Foul! Strike!";
+                System.out.println("Foul! Strike " + strike + "!");
+                return "Strike!";
             } else {
                 System.out.println("Foul!");
                 return "Foul!";
