@@ -29,6 +29,7 @@ public class Batting {
             System.out.println("Ball count is " + ball + ".");
             if (ball == 4) {
                 ball = 0;
+                System.out.println("Walk!");
                 return "Walk!";
             }
             return "Ball!";
@@ -38,6 +39,7 @@ public class Batting {
             System.out.println("Strike count is " + strike + ".");
             if (strike == 3) {
                 strike = 0;
+                System.out.println("Out!");
                 return "Out";
             } else {
                 return "Strike!";

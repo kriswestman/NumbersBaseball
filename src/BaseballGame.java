@@ -5,13 +5,24 @@ public class BaseballGame {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         int swing = 0;
+        boolean test = true;
         System.out.print("Welcome to Probability Baseball!\nTo play, enter numbers into the console.\nCan you beat the computer?\n\n");
         Batting bat = new Batting(swing);
-        bat.normalPitch();
-        while (!bat.normalPitch().equals("Out!") || !bat.normalPitch().equals("Single!") || !bat.normalPitch().equals("Double!")
-            || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.normalPitch().equals("Walk!")) {
-            bat.normalPitch();
+        String action = bat.normalPitch();
+        while (test) {
+            if (action != "Ball!" && action != "Strike!") {
+                test = false;
+            } else {
+                action = bat.normalPitch();
+            }
 
         }
+        /*while (!bat.normalPitch().equals("Out!") || !bat.normalPitch().equals("Single!") || !bat.normalPitch().equals("Double!")
+            || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.normalPitch().equals("Walk!")) {
+            System.out.println("before");
+            //bat.normalPitch();
+            System.out.println("past");
+        }*/
+        System.out.println("test run");
     }
 }
