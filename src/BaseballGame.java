@@ -19,13 +19,6 @@ public class BaseballGame {
                 }
             }
         }
-        /*while (!bat.normalPitch().equals("Out!") || !bat.normalPitch().equals("Single!") || !bat.normalPitch().equals("Double!")
-            || !bat.normalPitch().equals("Triple!") || !bat.normalPitch().equals("Home Run!") || !bat.normalPitch().equals("Walk!")) {
-            System.out.println("before");
-            //bat.normalPitch();
-            System.out.println("past");
-        }*/
-        System.out.println("test run");
     }
 
     //completes one atBat, calling the batting class, returning the action as a string

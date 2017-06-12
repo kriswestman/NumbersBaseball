@@ -7,10 +7,12 @@ public class Batting {
     int foul;
     int ball;
 
+    //Constructor for Batting class
     public Batting(int swing) {
         this.number = swing;
     }
 
+    //Prompts the user for an input and produces an output based on probability
     public String normalPitch() {
         Scanner input = new Scanner(System.in);
         System.out.print("The computer will now pitch.\nInput a number (1-25) to bat! ");
@@ -19,10 +21,12 @@ public class Batting {
             System.out.print("Input out of bounds. Try again! ");
             number = input.nextInt();
         }
+        //Sets a range of numbers to hit
         int pitch = randomPitch();
         if (pitch > 0 && pitch < 9) {
             return hit();
         }
+        //Sets a range of numbers to ball
         else if (pitch > 8 && pitch < 16) {
             System.out.println("Ball!");
             ball++;
@@ -33,6 +37,7 @@ public class Batting {
                 return "Walk!";
             }
             return "Ball!";
+        //Counts the number of strikes
         } else {
             System.out.println("Strike!");
             strike++;
@@ -46,6 +51,7 @@ public class Batting {
             }
         }
     }
+    //Chooses a random number from 1-25
     public int randomPitch() {
         return pitch.nextInt(24) + 1;
     }
@@ -70,9 +76,10 @@ public class Batting {
         } else if (randomHit >= 13 && randomHit <= 14) {
             System.out.println("Groundout!");
             return "Groundout!";
+        //Counts the number of fouls
         } else {
             foul++;
-            if (strike < 2) {
+            if (strike < 3) {
                 strike++;
                 System.out.println("Foul! Strike " + strike + "!");
                 return "Strike!";
