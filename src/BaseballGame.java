@@ -8,6 +8,7 @@ public class BaseballGame {
         int outs = 0;
         System.out.print("Welcome to Probability Baseball!\nTo play, enter numbers into the console.\nCan you beat the computer?\n\n");
         String action = "";
+        int runSet = 0;
         while (outs < 3) {
             action = atBat(outs, action);
             if (action == "Out" || action == "Groundout!" || action == "Flyout!") {
@@ -17,6 +18,10 @@ public class BaseballGame {
                 } else {
                     System.out.println(outs + " outs!");
                 }
+            } else {
+                int runnerOne = 0;
+                int runnerTwo = 0;
+                int runnerThree = 0;
             }
         }
     }
