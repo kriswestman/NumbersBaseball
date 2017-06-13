@@ -8,20 +8,30 @@ public class BaseballGame {
         int outs = 0;
         System.out.print("Welcome to Probability Baseball!\nTo play, enter numbers into the console.\nCan you beat the computer?\n\n");
         String action = "";
-        int runSet = 0;
-        while (outs < 3) {
-            action = atBat(outs, action);
-            if (action == "Out" || action == "Groundout!" || action == "Flyout!") {
-                outs++;
-                if (outs == 1) {
-                    System.out.println(outs + " out!");
+        int inning = 1;
+        boolean tie = false;
+        int computer = 0;
+        int player = 0;
+        while (inning <= 3 || tie) {
+            Baserunning run = new Baserunning();
+            while (outs < 3) {
+                action = atBat(outs, action);
+                if (action == "Out" || action == "Groundout!" || action == "Flyout!") {
+                    outs++;
+                    if (outs == 1) {
+                        System.out.println(outs + " out!");
+                    } else {
+                        System.out.println(outs + " outs!");
+                    }
                 } else {
-                    System.out.println(outs + " outs!");
+
                 }
+            }
+            computer = randomScore(computer);
+            if (computer == player) {
+                tie = true;
             } else {
-                int runnerOne = 0;
-                int runnerTwo = 0;
-                int runnerThree = 0;
+                tie = false;
             }
         }
     }
@@ -41,5 +51,8 @@ public class BaseballGame {
             }
         }
         return action;
+    }
+
+    public static int randomScore(int oldScore) {
     }
 }
