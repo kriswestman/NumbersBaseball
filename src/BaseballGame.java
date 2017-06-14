@@ -13,7 +13,9 @@ public class BaseballGame {
         int computer = 0;
         int player = 0;
         while (inning <= 3 || tie) {
+            System.out.println("Inning #" + inning + "!");
             Baserunning run = new Baserunning();
+            outs = 0;
             while (outs < 3) {
                 action = atBat(outs, action);
                 if (action == "Out" || action == "Groundout!" || action == "Flyout!") {
@@ -27,7 +29,10 @@ public class BaseballGame {
 
                 }
             }
+            int counter = computer;
             computer = randomScore(computer);
+            int change = computer - counter;
+            System.out.println("Computer scores " + change + "! \nScore: You: " + player + " CPU: " + computer);
             if (computer == player) {
                 tie = true;
             } else {
