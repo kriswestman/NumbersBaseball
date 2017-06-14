@@ -54,5 +54,21 @@ public class BaseballGame {
     }
 
     public static int randomScore(int oldScore) {
+        Random score = new Random();
+        int random = score.nextInt(10);
+        if (random < 2) {
+            return oldScore;
+        } else if (random < 4) {
+            return oldScore + 1;
+        } else if (random < 6) {
+            return oldScore + 2;
+        } else if (random < 8) {
+            return oldScore + 3;
+        } else if (random < 9) {
+            return oldScore + 4;
+        } else {
+            return oldScore + 5;
+        }
+
     }
 }

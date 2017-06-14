@@ -7,12 +7,6 @@ public class Baserunning {
     int runnerThree;
     int runnerFour;
 
-    public void reset() {
-        runnerOne = 0;
-        runnerTwo = 0;
-        runnerThree = 0;
-        runnerFour = 0;
-    }
 
 
 }
