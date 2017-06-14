@@ -79,7 +79,7 @@ public class Batting {
         //Counts the number of fouls
         } else {
             foul++;
-            if (strike < 3) {
+            if (strike < 2) {
                 strike++;
                 System.out.println("Foul! Strike " + strike + "!");
                 return "Strike!";

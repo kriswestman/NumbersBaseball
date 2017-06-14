@@ -33,6 +33,7 @@ public class BaseballGame {
             } else {
                 tie = false;
             }
+            inning++;
         }
     }
 
