@@ -7,7 +7,22 @@ public class Baserunning {
     int runnerThree;
     int runnerFour;
 
+    public int single() {
+        int runs = 0;
 
+        return runs;
+    }
 
+    public int dub() {
+
+    }
+
+    public int triple() {
+
+    }
+
+    public int homer() {
+
+    }
 
 }

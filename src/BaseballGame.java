@@ -26,7 +26,22 @@ public class BaseballGame {
                         System.out.println(outs + " outs!");
                     }
                 } else {
-
+//baserunning stuff here, using our input from the action variable
+                    int add = 0;
+                    if (action == "Single!") {
+                        add = run.single();
+                    } else if (action == "Double!") {
+                        add = run.dub();
+                    } else if (action == "Triple!") {
+                        add = run.triple();
+                    } else {
+                        add = run.homer();
+                    }
+                    if (add > 0) {
+                        System.out.println("You score" + add);
+                        player = player + add;
+                        add = 0;
+                    }
                 }
             }
             int counter = computer;
