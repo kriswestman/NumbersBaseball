@@ -26,7 +26,7 @@ public class BaseballGame {
                         System.out.println(outs + " outs!");
                     }
                 } else {
-//baserunning stuff here, using our input from the action variable
+                    //Base running actions here, using our input from the action variable
                     int add = 0;
                     if (action == "Single!") {
                         add = run.single();
@@ -74,6 +74,7 @@ public class BaseballGame {
         return action;
     }
 
+    //Records the scoring of the player based on runs
     public static int randomScore(int oldScore) {
         Random score = new Random();
         int random = score.nextInt(10);

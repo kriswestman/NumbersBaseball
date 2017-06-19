@@ -6,23 +6,25 @@ public class Baserunning {
     int runnerTwo;
     int runnerThree;
     int runnerFour;
+    int runs;
 
+    //Returns the number of runs when there is a single
     public int single() {
-        int runs = 0;
-
         return runs;
     }
 
+    //Returns the number of runs when there is a double
     public int dub() {
-
+        return runs;
     }
 
+    //Returns the number of runs when there is a triple
     public int triple() {
-
+        return runs;
     }
 
+    //Returns the number of runs when there is a home run
     public int homer() {
-
+        return runs;
     }
-
 }
